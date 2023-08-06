@@ -15,8 +15,11 @@ public class JpaDemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
 		return arg -> {
-			Customer john = new Customer("John", "Alexander", "07/28/2023");
+			Customer john = new Customer("John", "Alexander", "07/28/2023", "8675309");
 			customerRepository.save(john);
+
+			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023", "8675309");
+			customerRepository.save(jenny);
 		};
 	}
 }
