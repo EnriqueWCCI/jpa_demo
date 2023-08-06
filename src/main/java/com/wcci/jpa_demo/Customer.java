@@ -10,7 +10,7 @@ import lombok.Data;
 
 // This represents customer table in Java. Refer to example before.
 @Data
-@Table(name = "Customer")
+@Table(name = "Customer") // db: "customer"
 @Entity(name = "Customer")
 public class Customer {
     @Id // Specifies the Table ID
@@ -20,9 +20,9 @@ public class Customer {
                               // as, Nullable. This means the column cannot be empty
     private long id;
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String first_name;
+    private String first_name; // alt: firstName -> db: first_name
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String last_name;
+    private String last_name; // alt: lastName -> db: last_name
     @Column(nullable = false, columnDefinition = "TEXT")
     private String date_joined;
 
